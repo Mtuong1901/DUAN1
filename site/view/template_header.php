@@ -32,7 +32,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
-                    <img src="/content/img/logo.jpg" alt="">
+                    
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?mod=page&act=home">TRANG CHỦ</a>
@@ -82,7 +82,9 @@
         </div>
     </header>
     <!-- Banner -->
-    <div class="row">
+    <?php if(isset($_SESSION['cart']) && $_SESSION['cart']!= ''):?>
+    <?php else:?>
+      <div class="row">
         <div class="col-md-9 m-0 p-0">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
@@ -116,3 +118,4 @@
             <img class="img-fluid" src="../content/img/banner3.webp" alt="">
         </div>
     </div>
+    <?php endif;?>

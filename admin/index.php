@@ -8,6 +8,8 @@
             case 'product':
                 include_once 'controller/product.php';
                 break;    
+            case 'logout';
+            
         }
     } else {
         header('location: index.php?mod=category&act=list');

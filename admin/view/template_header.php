@@ -35,6 +35,6 @@
         <div class="col-md-10 p-0">
             <div class="shadow bg-danger text-white d-flex justify-content-between align-content-center  p-3 pb-1">
                 <p>TRANG QUẢN TRỊ WEBSITE HPLSHOP</p>
-                <div><span>Admin</span><img class="rounded m-1 border border-1 border-white" width="30px" height="30px" src="https://lh3.googleusercontent.com/a/AAcHTtdsW-6i09Wa-XNKWjkAjv7vrId4EIbE5Ggj3W_rA6_-18Q=s576-c-no" alt=""></div>
+                <div><span>Admin</span><img class="rounded m-1 border border-1 border-white" width="30px" height="30px" src="<?=$_SESSION['user']['Anh']?>" alt=""></div>
             </div>
             <div class="row vh-100">
