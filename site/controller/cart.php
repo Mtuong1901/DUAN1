@@ -17,6 +17,7 @@ include_once '../model_DAO/product.php';
                         'GiaKhuyenMai'=> $sp['GiaKhuyenMai'],
                         'SL'=>1
                     );
+                    // unset($_SESSION['cart']);
                 }
                 
                 // print_r($_SESSION['cart']);
@@ -27,6 +28,12 @@ include_once '../model_DAO/product.php';
                 case 'delete':
                     unset($_SESSION['cart'][$id]);
                     header('location: ?mod=cart&act=list');
+                    break;
+                case 'deleteAll':
+                    if(isset($_SESSION['cart']) && is_array($_SESSION['cart'])){
+                        unset($_SESSION['cart']);
+                        header("Location: ?mod=cart&act=list");
+                    }
                     break;
                 case 'list':
                     include_once 'view/template_header.php';
@@ -39,7 +46,7 @@ include_once '../model_DAO/product.php';
                     break;
                 case'decrease':
                     
-                    if ($_SESSION['cart'][$id]['SL']-=1) {
+                    if ($_SESSION['cart']) {
                         $_SESSION['cart'][$id]['SL']-=1;
                     }else {
                         unset($_SESSION['cart'][$id]);

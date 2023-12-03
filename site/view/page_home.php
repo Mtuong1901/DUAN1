@@ -25,7 +25,7 @@
                         <p><b><?=$sp['TenSanPham']?></b></p>
                         <span class="text-danger">Giá: <?=$sp['GiaKhuyenMai']?> đ </span> <span> <del> <?=$sp['Gia']?></del></span>
                         <p></p>
-                        <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Thuê ngay</a>
+                        <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Mua Ngay</a>
                     </div>
                 </div>
                 
@@ -55,7 +55,7 @@
                     <p><b><?=$sp['TenSanPham']?></b></p>
                     <span class="text-danger">Giá: <?=$sp['GiaKhuyenMai']?> đ </span> <span> <del> <?=$sp['Gia']?> đ</del></span>
                     <p></p>
-                    <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Thuê ngay</a>
+                    <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Mua Ngay</a>
                     </div>
                 </div>
                 <?php $dem++;?>

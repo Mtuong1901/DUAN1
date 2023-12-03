@@ -1,6 +1,7 @@
 
 <main>      
-           
+    <form action="" method="post">
+    <input type="hidden" name="tongtien" id="tongtien">
             <div class="container my-3">
                 <table id="cart" class="table table-hover table-condensed">
                     <thead>
@@ -29,7 +30,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
             </td>
             <td data-th="Kích thước">Size L</td>
             <td data-th="Màu sắc">Màu xanh</td>
-            <td data-th="Giá"><?=$item['GiaKhuyenMai']?> đ</td>
+            <td data-th="Giá"><?=$item['GiaKhuyenMai']?>đ</td>
             <td data-th="Số lượng">
                 <div class="amount-product-buy d-flex justify-content-center">
                     <a href="?mod=cart&act=decrease&id=<?=$item['MaSanPham'] ?>" class="minus-product bg-dark bg-opacity-25  px-2">
@@ -41,20 +42,25 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     </a>
                 </div>
             </td>
-            <td data-th="Thành tiền"></td>
+            <td data-th="Thành tiền"><?=$item['GiaKhuyenMai']*$item['SL']?></td>
             <td class="actions" data-th="">
                 <a href="?mod=cart&act=delete&id=<?=$item['MaSanPham'] ?>" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i>
                 </a>
             </td>
         </tr>
+
         <?php
     endforeach;
 } else {
-    echo "Giỏ hàng không tồn tại hoặc là một giá trị không hợp lệ.";
+    $tb=  "Giỏ hàng trống!!";
 }
+
 ?>
                     </tbody>
-
+                    <?php if(isset($tb) && $tb!= ''){
+                        echo('<h2 class="text-center text-warning">'.$tb.'</h2>');
+                    }
+                    ?>
                 </table>
                 <div class="cart-payment mt-5 sticky-bottom z-1 bg-white">
                     <div class="row border border-1 py-4 align-items-center mt-3 shadow-lg">
@@ -62,14 +68,20 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                             <div class="cart-payment-left d-flex hstack gap-3">
                                 <a href="?mod=page&act=home" class="btn btn-warning"><i class="fa fa-angle-left"></i>
                                     Tiếp tục mua hàng</a>
-
+                            </div>
+                            <div class="cart-payment-left d-flex hstack gap-3">
+                                <a href="?mod=cart&act=deleteAll" class="btn btn-danger mt-1"><i class="fa fa-angle-left"></i>
+                                    Xóa Hết </a>
                             </div>
                         </div>
+                        
                         <div class="col-sm-6">
                             <div
                                 class="cart-payment-right  d-flex align-items-center justify-content-between hstack gap-3">
                                 <h6 class="mb-0 text-truncate">Tổng thanh toán: </h6>
-                                <strong></strong>
+                                
+                                <strong>0 Đ</strong>
+                                
                                 <a href="?mod=order&act=checkout" class="btn btn-success btn-block">Thanh toán
                                 </a>
                             </div>
@@ -77,5 +89,21 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     </div>
                 </div>
             </div>
-            
-        </main>
+        </form>
+</main>
+<script>
+
+    function tinh_tong(){
+    var sp = document.querySelectorAll("table tbody tr");
+    var tong = 0;
+    for(const csp of sp){
+        var dongia = csp.querySelector('td:nth-child(5)').innerText.replace('đ','');
+        var soluong = csp.querySelector('td:nth-child(6)').innerText;
+        var thanhtien = dongia * soluong ;
+        tong = tong + thanhtien;
+        document.querySelector('div div strong').innerText=tong+'đ'; 
+    } 
+}
+tinh_tong();
+
+</script>
