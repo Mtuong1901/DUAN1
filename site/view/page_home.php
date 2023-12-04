@@ -6,10 +6,11 @@
             <H4 class="my-3">DANH MỤC SẢN PHẨM</H4>
             <div class="row">
                 <?php foreach ($dsdm as $dm):?>
-               
                     <div class="col-md-4 position-relative">
+                        <a href="?mod=page&act=category&id=<?=$dm['MaDanhMuc']?>">
                         <img class="img-fluid img-thumbnail" src="../content/img/<?=$dm['HinhAnh']?>" height="270px" alt="">
                         <p class="text-danger p-2 bg-white my-2 position-absolute top-50 start-50 fs-6 translate-middle"><?=$dm['TenDanhMuc']?> </p>
+                        </a>
                     </div>
                     <?php endforeach;?>
             </div>
@@ -23,7 +24,7 @@
                     <div class="shadow pb-3 rounded">
                         <a href="?mod=product&act=detail&id="><img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt=""></a>
                         <p><b><?=$sp['TenSanPham']?></b></p>
-                        <span class="text-danger">Giá: <?=$sp['GiaKhuyenMai']?> đ </span> <span> <del> <?=$sp['Gia']?></del></span>
+                        <span class="text-danger">Giá: <?=$sp['GiaKhuyenMai']?>đ </span> <span> <del> <?=$sp['Gia']?></del>đ</span>
                         <p></p>
                         <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Mua Ngay</a>
                     </div>
@@ -41,7 +42,7 @@
         <div class="text-center mt-5">
             <div class=" d-flex">
                 <H4 class="my-3"><?=$dm['TenDanhMuc']?></H4>
-                <a href="?mod=page&act=category&id=" class="btn btn-outline-dark my-3 ms-auto">Xem thêm</a>
+                <a href="?mod=page&act=category&id=<?=$dm['MaDanhMuc']?>" class="btn btn-outline-dark my-3 ms-auto">Xem thêm</a>
             </div>
             <div class="row">
                 <?php $dem=0;?>

@@ -1,0 +1,9 @@
+.col-md-4:hover{
+    box-shadow: 5px 5px #888888;
+    opacity: 0.7;
+}
+.col-md-3:hover{
+
+    transition: ease;
+    transform: scale(1.05);
+}
