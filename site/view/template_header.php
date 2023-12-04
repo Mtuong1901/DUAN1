@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>YoungStore</title>
+    <link rel="stylesheet" href="../content/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- icon boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
 </head>
 <body>
     <!-- Header -->
@@ -67,15 +69,15 @@
                             </div>
                         </div>
                         <div id="account" class="d-flex justify-content-center align-items-center rounded-circle bg-black bg-opacity-10  mx-2 px-2 py-1">
-                       <?php if(isset($_SESSION['user'])): ?>
-                          <a class="text-decoration-none text-white" href="?mod=user&act=info" >
-                                <img class="rounded rounded-5" src="../content/img/<?=$_SESSION['user']['Anh']?>" height=30px width=25px alt=""></a>
-                        <?php else: ?>
-                            <a class="text-decoration-none text-white" href="?mod=user&act=login" >
-                                <i class="bi bi-person-circle fw-bolder fs-5 text-secondary"></i></a>
-                       <?php endif;?>
-                        </div>
-                     </div>
+                        <?php if(isset($_SESSION['user'])): ?>
+                            <a class="text-decoration-none text-white" href="?mod=user&act=info" >
+                                  <img class="rounded rounded-5" src="../content/img/<?=$_SESSION['user']['Anh']?>" height=30px width=25px alt=""></a>
+                          <?php else: ?>
+                              <a class="text-decoration-none text-white" href="?mod=user&act=login" >
+                                  <i class="bi bi-person-circle fw-bolder fs-5 text-secondary"></i></a>
+                        <?php endif;?>
+                          </div>
+                      </div>
                   </div>
                 </div>
               </nav>

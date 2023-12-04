@@ -11,7 +11,7 @@
                 $_SESSION['user']=$data;
                     header('location: ?mod=page&act=home');
                 }else{
-                    $data="dang nhap khong thanh cong";
+                    $data="Sai tài khoản/mật khẩu! Hãy thử lại";
                     }
                 }
             include_once 'view/template_header.php';
