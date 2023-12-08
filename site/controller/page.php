@@ -32,6 +32,9 @@ if(isset($act)) {
             include_once 'view/page_category.php';
             include_once 'view/template_footer.php';
             break;  
+        case 'congra':
+            include_once 'view/page_congra.php';
+            break;
     }
 }
 ?>

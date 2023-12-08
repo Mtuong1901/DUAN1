@@ -45,5 +45,5 @@ include_once 'pdo.php';
         return pdo_execute($sql,$name,$image,$price,$sale,$category,$quantity,$description,$hot,$status,$id);
 
     }
-
+    
 ?>

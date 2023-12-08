@@ -14,9 +14,12 @@
             case 'user':
                 include_once 'controller/user.php'; 
                 break;  
-             case 'product':
+            case 'product':
                 include_once 'controller/product.php';
-                break;  
+                break; 
+            case'order':
+                include_once 'controller/order.php';
+                break;
         }
     } else {
         header('location: index.php?mod=page&act=home');
