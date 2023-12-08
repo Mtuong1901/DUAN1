@@ -1,7 +1,7 @@
 
 <main>      
-    <form action="" method="post">
-    <input type="hidden" name="tongtien" id="tongtien">
+    <form action="?mod=order&act=checkout" method="post">
+    <input type="hidden" name="tongtien" id="tongtien" >
             <div class="container my-3">
                 <table id="cart" class="table table-hover table-condensed">
                     <thead>
@@ -42,7 +42,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     </a>
                 </div>
             </td>
-            <td data-th="Thành tiền"><?=$item['GiaKhuyenMai']*$item['SL']?></td>
+            <td data-th="Thành tiền"><?=$item['GiaKhuyenMai']*$item['SL']?>đ</td>
             <td class="actions" data-th="">
                 <a href="?mod=cart&act=delete&id=<?=$item['MaSanPham'] ?>" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i>
                 </a>
@@ -51,9 +51,9 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 
         <?php
     endforeach;
-} else {
-    $tb=  "Giỏ hàng trống!!";
-}
+    } else {
+        $tb=  "Giỏ hàng trống!!";
+    }
 
 ?>
                     </tbody>
@@ -82,7 +82,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                 
                                 <strong>0 Đ</strong>
                                 
-                                <a href="?mod=order&act=checkout" class="btn btn-success btn-block">Thanh toán
+                                <button class="btn btn-danger" type="thanhtoan" name='thanhtoan'>Thanh toán</button>
                                 </a>
                             </div>
                         </div>
@@ -102,6 +102,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
         var thanhtien = dongia * soluong ;
         tong = tong + thanhtien;
         document.querySelector('div div strong').innerText=tong+'đ'; 
+        var tongtien =document.querySelector('#tongtien').value=tong;
     } 
 }
 tinh_tong();

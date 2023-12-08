@@ -52,7 +52,8 @@ include_once '../model_DAO/product.php';
                         unset($_SESSION['cart'][$id]);
                     }
                     header('location: ?mod=cart&act=list');
-                    break;    
+                    break;
+
             }
     }
 ?>

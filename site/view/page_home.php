@@ -22,7 +22,7 @@
                 <?php foreach($sp_hot as $sp):?>
                 <div class="col-md-3 ">
                     <div class="shadow pb-3 rounded">
-                        <a href="?mod=product&act=detail&id="><img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt=""></a>
+                        <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>"><img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt=""></a>
                         <p><b><?=$sp['TenSanPham']?></b></p>
                         <span class="text-danger">Giá: <?=$sp['GiaKhuyenMai']?>đ </span> <span> <del> <?=$sp['Gia']?></del>đ</span>
                         <p></p>
@@ -36,9 +36,6 @@
         </div>
         <!-- All categories -->
         <?php foreach($dsdm as $dm): ?>
-           
-               
-            
         <div class="text-center mt-5">
             <div class=" d-flex">
                 <H4 class="my-3"><?=$dm['TenDanhMuc']?></H4>
@@ -50,7 +47,7 @@
                 <?php  if ($sp['MaDanhMuc']==$dm['MaDanhMuc']): ?>
                 <div class="col-md-3 ">
                     <div class="shadow pb-3 rounded">
-                    <a href="?mod=product&act=detail&id=">
+                    <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>">
                         <img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt="">
                     </a>
                     <p><b><?=$sp['TenSanPham']?></b></p>
