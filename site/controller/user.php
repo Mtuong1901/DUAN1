@@ -33,7 +33,7 @@
         case 'register': 
             if (isset($register_submit)) {
             if($pass!=$repass){
-                    $data="Nhap khong dung";
+                    $data="Mật khẩu không trùng khớp";
             }else {
                 user_register($name,$email,$pass,$address,$phone,$FILES['image']['name']);
                 move_uploaded_file($FILES['image']['tmp_name'],'../content/img/'.$FILES['image']['name']);

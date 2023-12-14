@@ -109,7 +109,9 @@ if(isset($_SESSION['user']) && is_array($_SESSION['user'])){
                         <td data-th="Tên sản phẩm"><?=$item['TenSanPham']?></td>
                         <td data-th="Kích thước">Size L</td>
                         <td data-th="Số lượng"><?=$item['SL']?></td>
+                        <input type="hidden" name="soluong" id="" value="<?=$item['SL']?>">
                         <td data-th="Thành tiền"><?=$item['GiaKhuyenMai']*$item['SL']?>đ</td>
+                        <input type="hidden" name="giaban" id="" value="<?=$item['GiaKhuyenMai']*$item['SL']?>">
                     </tr>
                     <?php
                     endforeach;

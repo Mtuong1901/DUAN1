@@ -5,6 +5,3 @@ function add_order($MaSanPham,$TongTien,$GhiChu){
     $sql = " INSERT INTO donhang (`MaSanPham`,`NgayDatHang`,`TongTien`,`GhiChu`,`TrangThai`) VALUE(?,?,?,?,?)";
     return pdo_execute($sql,$MaSanPham,Date("Y-m-d H-i-sa"),$TongTien,$GhiChu,'Đang chờ xử lý');
 }
-
-
-?>
