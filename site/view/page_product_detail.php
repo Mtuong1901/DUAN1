@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="row ">
         
@@ -56,5 +57,4 @@
             <img src="../content/img/size.png" width="100%">
         </div>
         <div class="col-md-1"></div>
-    </div>
-</div>
+    </div

@@ -1,3 +1,4 @@
+
 <?php
 include_once '../model_DAO/product.php';
 extract($_REQUEST);
@@ -26,4 +27,4 @@ if(isset($act)){
                 
         }
 }
-?>
+
