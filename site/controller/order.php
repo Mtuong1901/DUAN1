@@ -13,10 +13,17 @@ if(isset($act)){
                         array_push($_SESSION['cart'],$bill);
                 }
                 break;
-                // case 'bill':
-                //         include_once '../model_DAO/order.php';
-                //         include_once './view/bill.php';
-                //         break;
+                case 'add_order':
+                        include_once '../model_DAO/order.php';
+                        if(isset($_POST['order'])){
+                                $TongTien = $_POST['tongtien'];
+                                $GhiChu = $_POST['ghichu'];
+                                add_order($TongTien,$GhiChu);
+                                unset($_SESSION['cart']);
+                                header("Location: index.php?mod=page&act=congra");
+                        }
+                        break;
+                
         }
 }
 ?>

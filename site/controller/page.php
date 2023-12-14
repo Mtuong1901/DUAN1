@@ -33,7 +33,9 @@ if(isset($act)) {
             include_once 'view/template_footer.php';
             break;  
         case 'congra':
+            include_once 'view/page_header_noo_slide.php';
             include_once 'view/page_congra.php';
+            include_once 'view/template_footer.php';
             break;
     }
 }
