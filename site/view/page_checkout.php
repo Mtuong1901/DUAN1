@@ -1,4 +1,12 @@
+<?php
+include_once '../model_DAO/user.php';
+if(isset($_SESSION['user']) && is_array($_SESSION['user'])){
+    $id = $_SESSION['user']['MaKhachHang'];
+    $user=user_one($id);
+}
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +59,8 @@
 </head>
 <body>
     <div class="container">
-    <form action="#" method="post" class="row ">
-        <div class="col-md-6">
+        <form action="?mod=order&act=add_order" method="post" class="row ">
+            <div class="col-md-6">
         <label for="">Hình thức thanh toán</label> <br>
             <select name="select" id="select">
                 <option value="COD">COD</option>
@@ -61,18 +69,18 @@
                 <option value="momo">MOMO</option>
             </select><br>
             <label for="">Họ và Tên</label><br>
-            <input type="text" name="name" id="" placeholder="Họ và tên"><br>
+            <input type="text" name="name" id="" value="<?=$user['HoTen']?>"><br>
             <label for="">Điện thoại</label><br>
-            <input type="text" name="phone" id="" placeholder="số điện thoại"><br>
+            <input type="text" name="phone" id="" value="<?=$user['SDT']?>"><br>
             <label for="">Địa chỉ</label><br>
-            <input type="text" name="address" id="" placeholder="Địa chỉ"><br>
+            <input type="text" name="address" id="" value="<?=$user['DiaChi']?>"><br>
             <label for="">Email</label><br>
-            <input type="text" name="email" id="" placeholder="Họ và tên"><br>   
+            <input type="text" name="email" id="" value="<?=$user['Email']?>"><br>   
             <label for="">Ghi Chú</label><br>
             <textarea name="ghichu" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="col-md-6 ">
-            <h1 class="text-success">Đơn hàng</h1>
+            </div>
+            <div class="col-md-6 ">
+                <h1 class="text-success">Đơn hàng</h1>
                 <div class="row">
                 <div class="col">
                 <table  class="table">
@@ -126,11 +134,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="?mod=order&act=bill" class="btn btn-success" id="xacnhan" type="xacnhan" name="xacnhan">Xác nhận</a>
+                <button class="btn btn-success" type="order" name="order">Xác Nhận</button>
             </div>
-            
-        </div>
-    </form>
+        </form>
     </div>
 </body>
 </html>

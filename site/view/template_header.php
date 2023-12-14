@@ -84,9 +84,7 @@
         </div>
     </header>
     <!-- Banner -->
-    <?php if(isset($_SESSION['cart']) && $_SESSION['cart']!= ''):?>
-    <?php else:?>
-      <div class="row">
+    <div class="row">
         <div class="col-md-9 m-0 p-0">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
@@ -120,4 +118,3 @@
             <img class="img-fluid" src="../content/img/banner3.webp" alt="">
         </div>
     </div>
-    <?php endif;?>
