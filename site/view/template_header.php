@@ -34,7 +34,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
-                    
+                  <a href="?mod=page&act=home"><img src="../content/img/logo.png" alt="" width="100px"></a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?mod=page&act=home">TRANG CHỦ</a>
