@@ -99,7 +99,8 @@ if(isset($_SESSION['user']) && is_array($_SESSION['user'])){
                     if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     foreach ($_SESSION['cart'] as $item):
                     ?>
-                    <tr  class="text-center">   
+                    <tr  class="text-center">
+                    <input type="hidden" name="MaSanPham" value="<?=$item['MaSanPham']?>">  
                         <td data-th="Sản phẩm">
                             <img
                             src="../content/img/<?=$item['HinhAnh']?>"
@@ -126,6 +127,7 @@ if(isset($_SESSION['user']) && is_array($_SESSION['user'])){
                         <div class="total">
                             <p>Tạm tính:</p>
                             <p><strong><?=$tongtien?></strong>đ</p>
+                            
                             <input type="hidden" name="tongtien" value="<?=$tongtien?>">
                         </div>
                         <div class="express">

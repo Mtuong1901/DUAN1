@@ -16,9 +16,10 @@ if(isset($act)){
                 case 'add_order':
                         include_once '../model_DAO/order.php';
                         if(isset($_POST['order'])){
+                                $MaSanPham = $_POST['MaSanPham'];
                                 $TongTien = $_POST['tongtien'];
                                 $GhiChu = $_POST['ghichu'];
-                                add_order($TongTien,$GhiChu);
+                                add_order($MaSanPham,$TongTien,$GhiChu);
                                 unset($_SESSION['cart']);
                                 header("Location: index.php?mod=page&act=congra");
                         }
