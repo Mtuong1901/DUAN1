@@ -1,4 +1,3 @@
-
 <?php
 include_once '../model_DAO/product.php';
 extract($_REQUEST);
@@ -19,6 +18,7 @@ if(isset($act)){
                         if(isset($_POST['order'])){
                                 $MaSanPham = $_POST['MaSanPham'];
                                 $TongTien = $_POST['tongtien'];
+                                $GhiChu = $_POST['ghichu'];
                                 add_order($MaSanPham,$TongTien,$GhiChu);
                                 unset($_SESSION['cart']);
                                 header("Location: index.php?mod=page&act=congra");
@@ -27,4 +27,4 @@ if(isset($act)){
                 
         }
 }
-
+?>
