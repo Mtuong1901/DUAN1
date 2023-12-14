@@ -44,7 +44,7 @@
             </div>
             <form method="post" action="?mod=cart&act=add&id=<?=$id?>">
             <p>Số lượng: <input type="number" value=1 width="10px" name="SoLuong">  </p>
-            <input type=submit class="btn btn-danger" name="product_add" value="Thuê ngay">
+            <input type=submit class="btn btn-danger" name="product_add" value="Mua Ngay">
             </form>
         </div>
        
