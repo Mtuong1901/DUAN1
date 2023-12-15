@@ -81,7 +81,6 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                 <h6 class="mb-0 text-truncate">Tổng thanh toán: </h6>
                                 
                                 <strong>0 Đ</strong>
-                                
                                 <button class="btn btn-danger" type="thanhtoan" name='thanhtoan'>Thanh toán</button>
                                 </a>
                             </div>

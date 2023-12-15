@@ -7,10 +7,14 @@ if(isset($act)){
                 include './view/template_header.php';
                 include_once './view/page_checkout.php';
                 include_once './view/template_footer.php';
-                if(isset($_POST['thanhtoan'])){
+                if(!isset($_SESSION['user']) && $$_SESSION['user'] = ''){
+                        $tb = "Hãy đăng nhập";
+                }else{
+                        if(isset($_POST['thanhtoan'])){
                         $tongtien = $_POST['tongtien'];
                         $bill = array("TongTien"=>$tongtien);
                         array_push($_SESSION['cart'],$bill);
+                        }
                 }
                 break;
                 case 'add_order':
